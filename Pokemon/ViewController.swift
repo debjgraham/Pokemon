@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -17,14 +17,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     
+    var pokemons : [Pokemon] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        pokemons = getAllPokemon()
         
         manager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            print("Ready to go!")
+            
+            mapView.delegate = self
             mapView.showsUserLocation = true
             manager.startUpdatingLocation()
             
@@ -49,11 +53,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        
+        if annotation is MKUserLocation {
+            let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            annoView.image = UIImage(named: "player-1")
+            
+            var frame = annoView.frame
+            frame.size.height = 25
+            frame.size.width = 25
+            
+            annoView.frame = frame
+            
+            return annoView
+        }
+        let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        annoView.image = UIImage(named: "mew")
+        
+        var frame = annoView.frame
+        frame.size.height = 25
+        frame.size.width = 25
+        
+        annoView.frame = frame
+        
+        return annoView
+        
+    }
+    
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
       
         if updateCount < 5 {
-            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 200, 200)
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 150, 150)
             
             mapView.setRegion(region, animated: false)
             updateCount += 1
@@ -64,11 +97,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func centerTapped(_ sender: Any) {
         if let cord = manager.location?.coordinate {
-            let region = MKCoordinateRegionMakeWithDistance(cord, 200, 200)
+            let region = MKCoordinateRegionMakeWithDistance(cord, 150, 150)
             
             mapView.setRegion(region, animated: true)
         }
     }
 
+
+    
 }
 

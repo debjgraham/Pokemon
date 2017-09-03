@@ -15,6 +15,7 @@
 		AD0E20BC1F5C5420009B4273 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD0E20BA1F5C5420009B4273 /* LaunchScreen.storyboard */; };
 		AD0E20C51F5C55ED009B4273 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E20C41F5C55ED009B4273 /* MapKit.framework */; };
 		AD0E20C91F5C6E32009B4273 /* PokeDexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E20C81F5C6E32009B4273 /* PokeDexViewController.swift */; };
+		AD0E20CB1F5C91CB009B4273 /* CoreDataHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E20CA1F5C91CB009B4273 /* CoreDataHelp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AD0E20BD1F5C5420009B4273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0E20C41F5C55ED009B4273 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AD0E20C81F5C6E32009B4273 /* PokeDexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokeDexViewController.swift; path = ../PokeDexViewController.swift; sourceTree = "<group>"; };
+		AD0E20CA1F5C91CB009B4273 /* CoreDataHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				AD0E20AE1F5C5420009B4273 /* AppDelegate.swift */,
 				AD0E20B01F5C5420009B4273 /* ViewController.swift */,
 				AD0E20C81F5C6E32009B4273 /* PokeDexViewController.swift */,
+				AD0E20CA1F5C91CB009B4273 /* CoreDataHelp.swift */,
 				AD0E20B21F5C5420009B4273 /* Main.storyboard */,
 				AD0E20B81F5C5420009B4273 /* Assets.xcassets */,
 				AD0E20BA1F5C5420009B4273 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				AD0E20B11F5C5420009B4273 /* ViewController.swift in Sources */,
 				AD0E20C91F5C6E32009B4273 /* PokeDexViewController.swift in Sources */,
 				AD0E20AF1F5C5420009B4273 /* AppDelegate.swift in Sources */,
+				AD0E20CB1F5C91CB009B4273 /* CoreDataHelp.swift in Sources */,
 				AD0E20B71F5C5420009B4273 /* Pokemon.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
